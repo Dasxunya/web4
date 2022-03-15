@@ -1,0 +1,200 @@
+body {
+    background: #2c1203;
+    font-family: "Century Gothic", sans-serif;
+    margin: 0;
+}
+
+input::placeholder{
+    color: #ad9385;
+}
+#body-table {
+    width: 100%;
+    cellpadding: 0;
+    cellspacing: 0;
+    overflow: hidden;
+}
+.for-button{
+    background-color: #8d7568;
+}
+.choose-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 25px;
+    margin: 50px 100px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 5px #ffb994;
+    border-radius: 20px;
+    align-items: center;
+    border-color: white;
+}
+/*--------------------------------*/
+.checkbox-area {
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 0px;
+    flex-direction: column;
+    align-items: center;
+    background: #8d7568;
+    width: auto;
+}
+
+#ttl {
+    width: 300px
+}
+
+#graph-and-ttl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#graph_pic {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.table-area {
+    display: flex;
+    justify-content: center;
+}
+
+#coordinates-form > div {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+}
+
+#main-table {
+    border-collapse: collapse;
+    overflow: hidden;
+    width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 10px 10px 30px;
+    background: linear-gradient(45deg, #421d06, #b77045);
+}
+
+#main-table th {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+}
+
+#main-table td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+}
+
+.col {
+    background-color: #85461c;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+tbody > tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody > td {
+    position: relative;
+}
+
+.ordinary-btn, .ordinary-btn-R {
+    background-color: #f3c3a6;
+    display: inline-block;
+    border-radius: 0px;
+    font-family: "Century Gothic", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    margin: 1px 30px;
+    width: 40px;
+    height: 30px;
+}
+
+.ordinary-btn-selected, .ordinary-btn-selected-R {
+    background-color: #693d24;
+    display: inline-block;
+    border-radius: 0px;
+    font-family: "Century Gothic", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    margin: 1px 30px;
+    width: 40px;
+    height: 30px;
+}
+.ordinary-btn:hover, .ordinary-btn-R:hover {
+    background-color: #ad8267;
+}
+#yField {
+    width: 200px;
+    height: 30px;
+    border-radius: 0px;
+    box-shadow: #2c1203;
+}
+
+caption {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "Century Gothic", sans-serif;
+    text-transform: uppercase;
+    color: #8d7568;
+}
+
+#ttl {
+    font-size: 12px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#ttlInput {
+    margin-top: 10px;
+}
+
+/*--------------*/
+.gradient-button {
+    color: #ffffff;
+    text-shadow: 3px 5px 6px black;
+    background: transparent;
+    border: 1px solid #ffffff;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: .3em;
+    padding: 17px 34px 17px 39px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.gradient-button:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #ad866f;
+    z-index: -1;
+    transition: .25s ease;
+    transform: translate(0, 0);
+}
+.gradient-button:hover:before {
+    transform: translate(4px, 4px);
+}
+
+@media (min-width: 768px) {
+    .gradient-button {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
