@@ -418,7 +418,9 @@ export default {
             this.$swal.fire({
               icon: "error",
               text: "Вы не выбрали Х",
-              title: "Упс..."
+              title: "Упс...",
+              background: '#efe1d5',
+              confirmButtonColor: '#8d7568',
             });
           }
         }
@@ -426,7 +428,9 @@ export default {
         this.$swal.fire({
           icon: "error",
           text: "Вы не выбрали Y",
-          title: "Упс..."
+          title: "Упс...",
+          background: '#efe1d5',
+          confirmButtonColor: '#8d7568',
         });
       }
     }
