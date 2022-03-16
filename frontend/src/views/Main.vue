@@ -241,7 +241,9 @@ export default {
          this.$swal.fire({
           icon: "error",
           text: "Точку не удалось добавить",
-          title: "Упс..."
+          title: "Упс...",
+           background: '#efe1d5',
+           confirmButtonColor: '#8d7568',
         });
       }).catch(() => {
         this.$router.push({name: 'error-page-expired'})
@@ -265,13 +267,18 @@ export default {
         this.$swal.fire({
           icon: "success",
           text: "Точки удалены!",
-          title: "Вот и все!"
+          title: "Вот и все!",
+          background: '#efe1d5',
+          confirmButtonColor: '#8d7568',
+
         });
       }, () => {
         this.$swal.fire({
           icon: "error",
           text: "Не получилось удалить точки",
-          title: "Упс..."
+          title: "Упс...",
+          background: '#efe1d5',
+          confirmButtonColor: '#8d7568',
         });
       }).catch(() => {
         this.$router.push({name: 'error-page-expired'})
@@ -282,9 +289,8 @@ export default {
         icon: "success",
         text: "До встречи!",
         title: "Вы успешно вышли",
-        customClass: {
-          confirmButton: 'for-button' //меняем цвет кнопки ОК
-        }
+        background: '#efe1d5',
+        confirmButtonColor: '#8d7568',
       });
       this.$router.push({name: "auth-page"}, () => localStorage.clear());
     },
