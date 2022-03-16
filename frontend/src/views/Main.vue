@@ -270,7 +270,6 @@ export default {
           title: "Вот и все!",
           background: '#efe1d5',
           confirmButtonColor: '#8d7568',
-
         });
       }, () => {
         this.$swal.fire({
@@ -308,8 +307,8 @@ export default {
           let newPoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
           newPoint.setAttribute("id", "target-dot");
           newPoint.setAttribute("r", "3.5");
-          newPoint.setAttribute("cx", `${(point.x / 3) * 100 + svgSize / 2}`);
-          newPoint.setAttribute("cy", `${svgSize / 2 - (point.y / 3) * 100}`);
+          newPoint.setAttribute("cx", `${(point.x / 4) * 100 + svgSize / 2}`);
+          newPoint.setAttribute("cy", `${svgSize / 2 - (point.y / 4) * 100}`);
           if (point.r === r) {
             newPoint.setAttribute("fill", point.result === "Попадание" ? "green" : "red");
             newPoint.setAttribute("r", "4.5");
@@ -361,39 +360,6 @@ export default {
         };
       }
     },
-    download() {
-      axios.post('http://localhost:8083/api/points/pdf', null, {
-        responseType: 'arraybuffer',
-        headers: {
-          "Authorization": "Bearer " + localStorage.getItem("jwt"),
-          "Accept": "application/octet-stream",
-          "Content-Type": "application/json"
-        }
-      }).then((response) => {
-        console.log(response)
-        let blob = new Blob([response.data], {type: 'application/octet-stream'})
-        let link = document.createElement('a')
-        link.href = window.URL.createObjectURL(blob)
-        let now = new Date();
-        link.download = formatDate(now)+".txt";
-        link.click();
-
-        this.getPoints();
-        this.drawPoints();
-      }).catch(() => {
-        this.$router.push({name: 'error-page-expired'})
-      })
-
-      function formatDate(date) {
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        let strTime = hours + '.' + minutes + '.' + seconds;
-        return strTime + "_" + (date.getMonth() + 1) + "." + date.getDate() + "." + date.getFullYear();
-      }
-    },
-
 
     rememberX(value1) {
       document.getElementById('pointX').value = value1;
